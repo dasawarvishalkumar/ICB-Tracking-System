@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Tracking Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .map-container {
+      height: 100vh;
+      width: 100%;
+    }
+    .icon {
+      font-size: 20px;
+      color: #006171;
+      cursor: pointer;
+      margin-left: 15px;
+    }
+    .icons i:hover {
+      color: #000000;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 18px;
+        margin-left: 30px;
+      }
+      .icon {
+        font-size: 18px;
+        margin-left: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>&#128652; Bus No 1 </h1>
+    <div class="icons">
+      <!-- Phone icon to call the bus driver -->
+      <a href="tel:+917981321536" title="Call Bus Driver"><i class="fas fa-phone icon"></i></a>
+      <!-- Message icon to SMS the bus driver -->
+      <a href="sms:+917981321536" title="Message Bus Driver"><i class="fas fa-comment icon"></i></a>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div id="map" class="map-container"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([16.6989, 77.9405], 13); // Hyderabad coordinates
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a custom bus marker
+    const busIcon = L.icon({
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/616/616498.png', // Example bus icon
+      iconSize: [40, 40]
+    });
+
+    const busMarker = L.marker([16.6989, 77.9405], { icon: busIcon }).addTo(map);
+    busMarker.bindPopup("Bus No 1 is here").openPopup();
+  </script>
+</body>
+</html>
