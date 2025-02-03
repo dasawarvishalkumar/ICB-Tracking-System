@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- FontAwesome -->
+    <style>
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: #006171;
+            color: white;
+             
+        }
+      .header a {
+        text-decoration: none; /* Remove underline */
+        color: white; /* Set text color to white */
+        margin-left: 10%;
+    }
+        .back-arrow {
+            font-size: 35px;
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+        }
+
+        .camera-icon {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: #006171;
+            width: 35px;
+            height: 35px;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .profile-info {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: background 0.3s;
+            background: #ecf0f3;
+        }
+
+        .field input, .field select {
+            background: transparent;
+            border: none;
+            color: #000;
+            width: 80%;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: inset 6px 6px 10px #cbced1, inset -6px -6px 10px #ffffff;
+        }
+
+        .field input:disabled, .field select:disabled {
+            background: #f4f4f9;
+            color: #000;
+        }
+
+        .edit-icon {
+            cursor: pointer;
+            color:  #006171;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .edit-icon:hover {
+            color: #06adc6;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            background: #fff9e6;
+            color: black;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 3px 3px 8px #cbced1, -3px -3px 8px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #87CEEB;
+        }
+
+                /* Media Queries for responsiveness */
+                @media screen and (max-width: 768px) {
+            .header {
+                padding: 20px;
+                font-size: 18px;
+            }
+
+            .header a {
+                margin-left: 5%;
+                font-size: 20px;
+            }
+
+            .profile-container {
+                margin-top: 20px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .camera-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .field input, .field select {
+                width: 70%;
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="header">
+    <a href="welcome.html"><span class="back-arrow">←</span> Profile</a>
+</div>
+
+    <div class="container">
+        <div class="profile-container">
+            <img id="profileImg" src="default-profile.jpg" alt="Profile Picture" class="profile-image">
+            <label for="imageUpload" class="camera-icon">
+                <i class="fa-solid fa-camera"></i>
+            </label>
+            <input type="file" id="imageUpload" accept="image/*" onchange="uploadImage()">
+        </div>
+
+        <div class="profile-info">
+            <div class="field">
+                <input type="text" id="userId" value="userId" disabled>
+                <i class="fa-solid fa-pen edit-icon" onclick="editField('userId')"></i>
+            </div>
+
+            <div class="field">
+                <input type="text" id="fullName" value="fullName" disabled>
+                <i class="fa-solid fa-pen edit-icon" onclick="editField('fullName')"></i>
+            </div>
+
+            <div class="field">
+                <input type="tel" id="phoneNumber" value="+91 1111111111" disabled>
+                <i class="fa-solid fa-pen edit-icon" onclick="editField('phoneNumber')"></i>
+            </div>
+
+            <div class="field">
+                <input type="date" id="dob" value="dd/mm/yy" disabled>
+                <i class="fa-solid fa-pen edit-icon" onclick="editField('dob')"></i>
+            </div>
+
+            <div class="field">
+                <input type="email" id="email" value="gmail" disabled>
+                <i class="fa-solid fa-pen edit-icon" onclick="editField('email')"></i>
+            </div>
+
+            <div class="field">
+                <select id="gender" disabled>
+                    
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <i class="fa-solid fa-pen edit-icon" onclick="editField('gender')"></i>
+            </div>
+
+            <div class="field">
+                <input type="text" id="branchYear" value="branch/Year" disabled>
+                <i class="fa-solid fa-pen edit-icon" onclick="editField('branchYear')"></i>
+            </div>
+            <button onclick="saveProfile()">Save Changes</button>
+        </div>
+    </div>
+
+    <script>
+        function uploadImage() {
+            const file = document.getElementById('imageUpload').files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileImg').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function editField(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.disabled = false;
+            field.focus();
+        }
+
+        function saveProfile() {
+            const userId = document.getElementById('userId').value;
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const dob = document.getElementById('dob').value;
+            const email = document.getElementById('email').value;
+            const gender = document.getElementById('gender').value;
+            const branchYear = document.getElementById('branchYear').value;
+
+            // Update fields with the saved values
+            document.getElementById('userId').value = userId;
+            document.getElementById('fullName').value = fullName;
+            document.getElementById('phoneNumber').value = phoneNumber;
+            document.getElementById('dob').value = dob;
+            document.getElementById('email').value = email;
+            document.getElementById('gender').value = gender;
+            document.getElementById('branchYear').value = branchYear;
+
+            // Disable fields after saving
+            document.getElementById('userId').disabled = true;
+            document.getElementById('fullName').disabled = true;
+            document.getElementById('phoneNumber').disabled = true;
+            document.getElementById('dob').disabled = true;
+            document.getElementById('email').disabled = true;
+            document.getElementById('gender').disabled = true;
+            document.getElementById('branchYear').disabled = true;
+
+            alert("Profile saved successfully!");
+        }
+    </script>
+</body>
+</html>

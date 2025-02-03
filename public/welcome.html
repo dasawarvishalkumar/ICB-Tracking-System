@@ -126,6 +126,23 @@ h1 {
             text-align: center;
             color: white;
         }
+        .navbar a {
+    text-decoration: none; /* Removes underline */
+    color: white; /* Ensures text remains white */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar a:hover {
+    color: white; /* Keeps text white on hover */
+}
+
+.navbar div:hover {
+    color: #000000; /* Changes color on hover */
+    transform: scale(1.2); /* Enlarges */
+    cursor: pointer;
+}
 
         .navbar {
             display: flex;
@@ -140,7 +157,11 @@ h1 {
             width: 100%;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
-
+        .navbar div:hover {
+    color: #000000; /* Change color on hover (blue example) */
+    transform: scale(1.2); /* Slightly enlarge the icon */
+    cursor: pointer; /* Change cursor to pointer */
+}
         .navbar div {
             display: flex;
             flex-direction: column;
@@ -148,11 +169,20 @@ h1 {
             font-size: 12px;
             cursor: pointer;
         }
+        
 
         .navbar div i {
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
+    font-size: 20px;
+    margin-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.navbar div i:hover {
+    color: #000000; /* Change color on hover (blue example) */
+    transform: scale(1.2); /* Slightly enlarge the icon */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
 
         /* Responsive Design */
          
@@ -193,7 +223,7 @@ h1 {
 }
         .container {
             margin: 20px;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
         }
 
          .card {
@@ -269,10 +299,9 @@ h1 {
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Profile</a>
-        <a href="#">Contact Us</a>
-        <a href="#">About us</a>
+        <a href="welcome.html">Home</a>
+        <a href="myprofile.html">Profile</a>
+        
     </nav>
 
    <div class="container">
@@ -406,24 +435,20 @@ h1 {
     </footer>
 
     <!-- Mobile Footer -->
-    <div class="navbar mobile-footer">
-        <div class="active">
-            <i class="fas fa-home"></i>
-            Home
-        </div>
-        <div>
-              <i class="fas fa-user"></i>
-            Profile
-        </div>
-        <div>
-            <i class="fas fa-phone"></i>
-            Contact
-        </div>
-        <div>
-            <i class="fas fa-comment"></i>
-            About
-        </div>
-         
+    <div class="navbar">
+        <a href="welcome.html">
+            <div class="active">
+                <i class="fas fa-home"></i>
+                Home
+            </div>
+        </a>
+        <a href="myprofile.html">
+            <div>
+                <i class="fas fa-user"></i>
+                Profile
+            </div>
+        </a>
     </div>
+    
 </body>
 </html>

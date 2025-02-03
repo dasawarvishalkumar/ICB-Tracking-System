@@ -39,8 +39,12 @@
             font-size: 0.9rem;
             color: #777;
         }
-        .login-container input {
+        .input-container {
+            position: relative;
             width: 100%;
+        }
+        .login-container input {
+            width: 85%;
             padding: 15px;
             margin: 10px 0;
             border: none;
@@ -50,6 +54,15 @@
             box-shadow: inset 6px 6px 10px #cbced1, inset -6px -6px 10px #ffffff;
             font-size: 14px;
             color: #555;
+            padding-right: 40px;
+        }
+        .eye-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
         }
         .login-container button {
             width: 100%;
@@ -67,6 +80,24 @@
         .login-container button:hover {
             background: #87CEEB;
         }
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .links a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 45px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .login-container {
             background: #ecf0f3;
@@ -74,7 +105,7 @@
             border-radius: 20px;
             box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
             text-align: center;
-            width: 200px;
+            width: 250px;
         }
         .login-container img {
             width: 50px;
@@ -118,6 +149,15 @@
             box-shadow: 3px 3px 8px #cbced1, -3px -3px 8px #ffffff;
             transition: all 0.3s ease;
         }
+        .links {
+            margin-top: 1px;
+            font-size: 14px;
+        }
+        .links a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
         }
     </style>
 </head>
@@ -126,13 +166,58 @@
         <img src="https://assets.onecompiler.app/42ucesb3u/433ze7s8a/download%20(1).jpeg" alt="User Icon">
         <h1>Login</h1>
         <p>ICB-Tracking System</p>
-        <form>
-            <input type="text" placeholder="User-id" required>
-            <input type="password" placeholder="Password" required>
-            <button > 
-            <a href="welcome.html">Login</a>
-        </button>
+        <form onsubmit="return validateLogin()">
+            <input type="text" id="userId" placeholder="User-id" required>
+            
+            <div class="input-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="eye-icon" onclick="togglePassword()">👁️</span>
+            </div>
+
+            <button type="submit">Login</button>
         </form>
+        <p id="error-message" class="error"></p>
+        
+        <div class="links">
+            <a href="register.html">Register</a>
+            <a href="forgot-password.html">Forgot Password?</a>
+        </div>
     </div>
+
+    <script>
+        function validateLogin() {
+            const credentials = {
+                "ICB-CS018": "7981321536",
+                "ICB-CS004": "7993325602",
+                "ICB-CS052": "8008550569",
+                "ICB-CS054": "8523888119"
+            };
+
+            const userId = document.getElementById("userId").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (credentials[userId] && credentials[userId] === password) {
+                window.location.href = "welcome.html";
+                return false;
+            } else {
+                errorMessage.textContent = "Invalid User ID or Password!";
+                return false;
+            }
+        }
+
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const eyeIcon = document.querySelector(".eye-icon");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.textContent = "🙈"; // Change to "hide" icon
+            } else {
+                passwordField.type = "password";
+                eyeIcon.textContent = "👁️"; // Change back to "show" icon
+            }
+        }
+    </script>
 </body>
 </html>
