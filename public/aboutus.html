@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JPNCE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: #006171;
+            color: white;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: white;
+            margin-left: 10%;
+        }
+
+        .back-arrow {
+            font-size: 35px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        /* Image Slider */
+        .image-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;/* Adjusted for mobile */
+            overflow: hidden;
+        }
+
+        .image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+            background: white;
+            max-width: 90%;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        /* Follow Us Section */
+        .follow-us {
+            text-align: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .follow-us a {
+            text-decoration: none;
+            color: #006970;
+            font-size: 24px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .follow-us a:hover {
+            transform: scale(1.1);
+        }
+
+        .follow-us a i {
+            margin-right: 5px;
+            gap: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                font-size: 18px;
+                padding: 12px 15px;
+            }
+
+            .back-arrow {
+                font-size: 24px;
+            }
+
+            .image-slider {
+                height: 200px;
+            }
+
+            .content {
+                max-width: 95%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .follow-us {
+                gap: 10px;
+            }
+
+            .follow-us a {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="contactus.html"><span class="back-arrow">←</span> About us </a>
+    </div>
+    
+    <div class="image-slider">
+        <img src="https://assets.onecompiler.app/42ucesb3u/439qe4h5k/1000087188.jpg" class="slide" style="opacity: 1;">
+        <img src="https://assets.onecompiler.app/42ucesb3u/439qe4h5k/1000087187.jpg" class="slide">
+        <img src="https://assets.onecompiler.app/42ucesb3u/439qe4h5k/1000087193.jpg" class="slide">
+    </div>
+
+    <div class="content">
+        <h1>Jaya Prakash Narayana College of Engineering</h1>
+        <p>
+            JPNCE is a premier institution dedicated to excellence in technical education. Established with a vision to nurture future leaders, 
+            we offer cutting-edge academic programs, state-of-the-art infrastructure, and a strong industry interface. Our faculty comprises 
+            experienced educators committed to providing quality education and fostering innovation. At JPNCE, we focus on holistic development, 
+            ensuring our students excel in academics, research, and professional careers.
+        </p>
+
+        <div class="follow-us">
+            <h2>Follow Us</h2>
+            <a href="https://www.instagram.com/jpnceofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://jpnce.ac.in/new/index.php" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+            </a>
+            <a href="https://m.facebook.com/jpnce4u/" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showNextSlide() {
+            slides[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].style.opacity = 1;
+        }
+
+        setInterval(showNextSlide, 3000);
+    </script>
+</body>
+</html>

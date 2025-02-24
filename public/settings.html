@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Menu</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+             /* Header Styling */
+             .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: #006171;
+            color: white;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: white;
+            margin-left: 10%;
+        }
+
+        .back-arrow {
+            font-size: 35px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #000000;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: #ccc;
+        }
+
+        .menu-item i {
+            font-size: 25px;
+            margin-right: 20px;
+            color: #bbb;
+        }
+
+        .menu-item-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item-title {
+            font-size: 18px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .menu-item-subtitle {
+            font-size: 16px;
+            color: #888;
+            margin-left: 20px;
+        }
+
+        /* Submenu Styling */
+        .submenu {
+            display: none;
+            padding-left: 50px;
+            font-size: 16px;
+        }
+
+        .submenu-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f4f4f4;
+            border-radius: 5px;
+            margin: 5px 0;
+            transition: background 0.3s;
+        }
+
+        .submenu-item:hover {
+            background: #ddd;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 120px;
+            padding: 8px 15px;
+            background: #ddd;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .toggle-btn.active {
+            background: red;
+            color: white;
+        }
+
+        /* Logout Confirmation */
+        .logout-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .logout-popup button {
+            margin: 10px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .logout-popup .cancel {
+            background: #ddd;
+        }
+
+        .logout-popup .confirm {
+            background: #d9534f;
+            color: white;
+        }
+
+         /* Responsive Design */
+         @media screen and (max-width: 600px) {
+            .header {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .back-arrow {
+                font-size: 30px;
+            }
+
+            .menu-item {
+                padding: 12px;
+                margin-left: 5%;
+            }
+
+            .section-title {
+                font-size: 14px;
+                margin-top: 25px;
+                margin-bottom: 10px;
+                margin-left: 4%;
+            }
+
+            .menu-item i {
+                font-size: 24px;
+                margin-left: 5%;
+            }
+
+            .menu-item-title {
+                font-size: 15px;
+                margin-left: 6%;
+            }
+
+            .menu-item-subtitle {
+                font-size: 13px;
+                margin-left: 6%;
+            }
+        }
+            .submenu {
+                padding-left: 30px;
+                margin-left: 3%;
+            }
+
+           
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <a href="tools.html"><span class="back-arrow">←</span> Settings</a>
+    </div>
+
+    <div class="container">
+        <div class="section-title">Manage your account</div>
+
+        <!-- Notifications with Dropdown -->
+        <div class="menu-item" onclick="toggleSubmenu('notifications-menu')">
+            <i class="fa-solid fa-bell"></i>
+            <div class="menu-item-text">
+                <span class="menu-item-title">Notifications</span>
+                <span class="menu-item-subtitle">Manage your alerts</span>
+            </div>
+        </div>
+        <div id="notifications-menu" class="submenu">
+            <div class="submenu-item">
+                <span>Notifications</span>
+                <div class="toggle-btn" onclick="toggleNotifications(this)">ON</div>
+            </div>
+        </div>
+
+        <!-- Help -->
+        <a href="help.html" class="menu-item">
+            <i class="fa-solid fa-circle-info"></i>
+            <div class="menu-item-text">
+                <span class="menu-item-title">Help</span>
+                <span class="menu-item-subtitle">Get support and assistance</span>
+            </div>
+        </a>
+
+        <!-- Logout with Confirmation -->
+        <div class="menu-item" onclick="toggleSubmenu('logout-menu')">
+            <i class="fa-solid fa-sign-out-alt"></i>
+            <div class="menu-item-text"  onclick="showLogoutPopup()">
+                <span class="menu-item-title">Logout</span>
+                <span class="menu-item-subtitle">Sign out of your account</span>
+            </div>
+        </div>
+         
+    </div>
+
+    <!-- Logout Popup -->
+    <div id="logout-popup" class="logout-popup">
+        <p>Are you sure you want to log out?</p>
+        <button class="cancel" onclick="closeLogoutPopup()">Cancel</button>
+        <button class="confirm" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function toggleSubmenu(id) {
+            var submenu = document.getElementById(id);
+            if (submenu.style.display === "block") {
+                submenu.style.display = "none";
+            } else {
+                submenu.style.display = "block";
+            }
+        }
+
+        function toggleNotifications(btn) {
+            if (btn.classList.contains("active")) {
+                btn.classList.remove("active");
+                btn.textContent = "ON";
+            } else {
+                btn.classList.add("active");
+                btn.textContent = "OFF";
+            }
+        }
+
+        function showLogoutPopup() {
+            document.getElementById("logout-popup").style.display = "block";
+        }
+
+        function closeLogoutPopup() {
+            document.getElementById("logout-popup").style.display = "none";
+        }
+
+        function logout() {
+            window.location.href = "logout.html";  // Redirect to logout page
+        }
+    </script>
+
+</body>
+</html>
