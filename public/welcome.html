@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICB Tracking System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-       <!-- FontAwesome CDN for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -17,47 +15,56 @@
         }
 
         body {
-            background-color: #f5f5f5; /* Light background */
-            color: #000000; /* Text color */
+            background-color: #f5f5f5;
+            /* Light background */
+            color: #000000;
+            /* Text color */
             min-height: 100vh;
             width: 100%;
-            margin-top: 120px; /* Adjust according to header height */
-            
-}
-     
-header {
-    background-color: #006171;
-    color: white;
-    padding: 25px 55px;
-    height: auto;
-    width: 100%; /* Full width */
-    text-align: center;
-    font-size: 20px;
-    position: fixed; /* Fixes the header at the top */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Ensures it stays above other content */
-}
+            margin-top: 120px;
+            /* Adjust according to header height */
 
-header img {
-    width: 80px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    transform: translateY(-50%); /* Centers the image vertically */
-}
+        }
 
-h1 {
-    font-size: 36px;
-    color: #ffffff;
-    text-align: center;
-    font-weight: bold;
-    margin: 0; /* Removes unnecessary spacing */
-    padding-top: 10px; /* Adjust if needed */
-}
-        
-          .container {
+        header {
+            background-color: #006171;
+            color: white;
+            padding: 25px 55px;
+            height: auto;
+            width: 100%;
+            /* Full width */
+            text-align: center;
+            font-size: 20px;
+            position: fixed;
+            /* Fixes the header at the top */
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            /* Ensures it stays above other content */
+        }
+
+        header img {
+            width: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            /* Centers the image vertically */
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+            /* Removes unnecessary spacing */
+            padding-top: 10px;
+            /* Adjust if needed */
+        }
+
+        .container {
             margin: 20px;
             margin-bottom: 100px;
         }
@@ -76,7 +83,7 @@ h1 {
             justify-content: space-between;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-       
+
 
         .bus-number {
             font-size: 24px;
@@ -96,21 +103,22 @@ h1 {
         .icons {
             display: flex;
             gap: 20px;
-            
-            
+
+
         }
 
         .icons i {
             font-size: 30px;
-            color: #006171 ;
+            color: #006171;
             cursor: pointer;
-            
+
         }
+
         .icons i:hover {
             color: #000000;
         }
 
-        
+
         .footer {
             position: fixed;
             bottom: 0;
@@ -167,15 +175,16 @@ h1 {
             border-radius: 50%;
             z-index: 1;
         }
-        
+
         /* Active Icon Color */
         .footer-item.active i {
             color: #000;
         }
+
         /* Responsive Design */
-         
+
         .desktop-footer {
-            display:block;
+            display: block;
         }
 
         .mobile-footer {
@@ -190,269 +199,208 @@ h1 {
             }
 
             header {
-    background-color: #006171;
-    color: white;
-    padding: 5px 20px;
-    height: auto;
-    width: 100%; /* Full width */
-    text-align: center;
-    font-size: 10px;
-    height: 70px;
-    position: fixed; /* Fixes the header at the top */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Ensures it stays above other content */
-}
+                background-color: #006171;
+                color: white;
+                padding: 5px 20px;
+                height: auto;
+                width: 100%;
+                /* Full width */
+                text-align: center;
+                font-size: 10px;
+                height: 70px;
+                position: fixed;
+                /* Fixes the header at the top */
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                /* Ensures it stays above other content */
+            }
 
-header img {
-    width: 60px;
-    border-radius: 50%;
-    position: absolute;
-    top: 34px;
-    left: 30px;
-    transform: translateY(-50%); /* Centers the image vertically */
-}
+            header img {
+                width: 60px;
+                border-radius: 50%;
+                position: absolute;
+                top: 34px;
+                left: 30px;
+                transform: translateY(-50%);
+                /* Centers the image vertically */
+            }
 
-    h1 {
-    font-size: 18px; /* Adjust the size to make it prominent */
-    color: #ffffff; /* White color for contrast on the header background */
-    text-align: center; /* Center align the text */
-    font-weight: bold; /* Make the text bold */
-     margin-top: 10px; /* Add spacing at the top */
-     margin-left: 10px;
-}
-        .container {
-            margin: 20px;
-            margin-bottom: 5px;
-             
-        }
+            h1 {
+                font-size: 18px;
+                /* Adjust the size to make it prominent */
+                color: #ffffff;
+                /* White color for contrast on the header background */
+                text-align: center;
+                /* Center align the text */
+                font-weight: bold;
+                /* Make the text bold */
+                margin-top: 10px;
+                /* Add spacing at the top */
+                margin-left: 10px;
+            }
 
-         .card {
-            background: white;
-            margin-bottom: 5px;
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            width: 94%;
-            margin-left: 3%;
-            margin-right: 3%;
-            margin-bottom: 20px;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-         .bus-number {
-            font-size: 16px;
-            font-weight: bold;
-            margin-right: 20px;
-        }
+            .container {
+                margin: 20px;
+                margin-bottom: 5px;
 
-        .route {
-            font-size: 13px;
-            line-height: 1.5;
-            font-weight: bold;
-            color: #555;
-            text-align: center;
-            flex: 1;
-        }
+            }
 
-        .icons {
-            display: flex;
-            gap: 10px;
-            
-        }
+            .card {
+                background: white;
+                margin-bottom: 5px;
+                padding: 10px;
+                border-radius: 10px;
+                display: flex;
+                width: 94%;
+                margin-left: 3%;
+                margin-right: 3%;
+                margin-bottom: 20px;
+                align-items: center;
+                justify-content: space-between;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-        .icons i {
-            font-size: 20px;
-             
-            cursor: pointer;
-        }
+            .bus-number {
+                font-size: 16px;
+                font-weight: bold;
+                margin-right: 20px;
+            }
 
-        /* 🔹 Mobile Responsiveness */
-@media (max-width: 768px) {
-    .footer {
-        padding: 15px 0; /* Adjust padding for smaller screens */
-    }
-    
-    .footer-item {
-        padding: 8px;
-    }
+            .route {
+                font-size: 13px;
+                line-height: 1.5;
+                font-weight: bold;
+                color: #555;
+                text-align: center;
+                flex: 1;
+            }
 
-    .footer-item i {
-        font-size: 22px; /* Slightly smaller icons for mobile */
-    }
+            .icons {
+                display: flex;
+                gap: 10px;
 
-    .footer-item.active::after {
-        width: 45px;
-        height: 45px;
-    }
-}
+            }
+
+            .icons i {
+                font-size: 20px;
+
+                cursor: pointer;
+            }
+
+            /* 🔹 Mobile Responsiveness */
+            @media (max-width: 768px) {
+                .footer {
+                    padding: 15px 0;
+                    /* Adjust padding for smaller screens */
+                }
+
+                .footer-item {
+                    padding: 8px;
+                }
+
+                .footer-item i {
+                    font-size: 22px;
+                    /* Slightly smaller icons for mobile */
+                }
+
+                .footer-item.active::after {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+
             .desktop-footer {
-                display: none; /* Hide desktop footer on small screens */
+                display: none;
+                /* Hide desktop footer on small screens */
             }
 
             .mobile-footer {
-                display: flex; /* Show mobile footer on small screens */
+                display: flex;
+                /* Show mobile footer on small screens */
             }
         }
 
         @media (min-width: 769px) {
             .desktop-footer {
-                display: block; /* Show desktop footer on larger screens */
+                display: block;
+                /* Show desktop footer on larger screens */
             }
 
             .mobile-footer {
-                display: none; /* Hide mobile footer on larger screens */
+                display: none;
+                /* Hide mobile footer on larger screens */
             }
         }
-      /* Hide navigation for mobile view */
-    @media (max-width: 768px) {
-        nav {
-            display: none; /* Hides the nav element on smaller screens */
+
+        /* Hide navigation for mobile view */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                /* Hides the nav element on smaller screens */
+            }
+
         }
-        
-    }
+
+        /* Add status indicator styles */
+        .status-indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-active {
+            background-color: #4CAF50;
+        }
+
+        .status-inactive {
+            background-color: #F44336;
+        }
+
+        .status-maintenance {
+            background-color: #FFC107;
+        }
+
+        /* Add real-time update notification */
+        .update-notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(0, 97, 113, 0.9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+        }
     </style>
 </head>
+
 <body>
     <header>
-        <img src="https://assets.onecompiler.app/42y68y97m/433wsrkx3/DALL%C2%B7E%202024-12-16%2019.45.45%20-%20A%20futuristic%20and%20sleek%20logo%20design%20for%20a%20company%20named%20'ICB'%20with%20the%20subtitle%20'TRACKING%20SYSTEM'.%20The%20logo%20should%20include%20abstract%20GPS-inspired%20elemen.webp" alt="Akshara Logo">
+        <img src="https://assets.onecompiler.app/42y68y97m/433wsrkx3/DALL%C2%B7E%202024-12-16%2019.45.45%20-%20A%20futuristic%20and%20sleek%20logo%20design%20for%20a%20company%20named%20'ICB'%20with%20the%20subtitle%20'TRACKING%20SYSTEM'.%20The%20logo%20should%20include%20abstract%20GPS-inspired%20elemen.webp"
+            alt="ICB Logo">
         <h1>ICB Tracking System</h1>
     </header>
- 
-   <div class="container">
-       <div class="card">
-            <div class="status-bar status-green"></div>
-            <div class="bus-number">  BUS NO-01 </div> 
-            <div class="route">
-                COLLEGE <br> <SMALL>TO</SMALL><br> JADCHERLA
-            </div>
-            <div class="icons">
-                <a href="tel:+91 7981321536">
-                    <i class="fas fa-phone"></i>
-                </a>
-                 
-                <a href="location.html">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                
-              </div>
-         </div>
 
+    <div class="update-notification" id="updateNotification">
+        Bus locations updated <span id="updateTime">just now</span>
+    </div>
 
-        <div class="card">
-            <div class="status-bar status-green"></div>
-            <div class="bus-number">BUS NO-02</div>
-            <div class="route">
-                COLLEGE <br> <SMALL>TO</SMALL><br> KOTHAKOTA
-            </div>
-            <div class="icons">
-                <a href="tel:+1234567890">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="location.html">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="status-bar status-green"></div>
-            <div class="bus-number">BUS NO-03</div>
-            <div class="route">
-                COLLEGE <br> <SMALL>TO</SMALL><br> METTUGADA
-            </div>
-            <div class="icons">
-                <a href="tel:+1234567890">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="location.html">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                
-            </div>
-        </div>
-        
-         <div class="card">
-            <div class="status-bar status-green"></div>
-            <div class="bus-number">BUS NO-04</div>
-            <div class="route">
-                COLLEGE <br> <SMALL>TO</SMALL><br> PADMAVATHI-COLLONY
-            </div>
-            <div class="icons">
-                <a href="tel:+1234567890">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="location.html">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                
-            </div>
-        </div>
-        
-         <div class="card">
-            <div class="status-bar status-green"></div>
-            <div class="bus-number">BUS NO-05</div>
-            <div class="route">
-                COLLEGE <br> <SMALL>TO</SMALL><br> HOUSING-BOARD
-            </div>
-            <div class="icons">
-                <a href="tel:+1234567890">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="location.html">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                
-            </div>
-        </div>
-        
-         <div class="card">
-            <div class="status-bar status-green"></div>
-            <div class="bus-number">BUS NO-06</div>
-            <div class="route">
-                COLLEGE <br> <SMALL>TO</SMALL><br> KOTHAKOTA
-            </div>
-            <div class="icons">
-                <a href="tel:+1234567890">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="location.html">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="status-bar status-red"></div>
-            <div class="bus-number">BUS NO-07</div>
-            <div class="route">
-                COLLEGE <br> <SMALL>TO</SMALL> <br> HOUSING-BOARD
-            </div>
-            <div class="icons">
-                <a href="tel:+1234567890">
-                    <i class="fas fa-phone"></i>
-                </a>
-                
-                <a href="location.html">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                
-            </div>
-        </div>
+    <div class="container" id="busContainer">
+        <!-- Bus cards will be dynamically inserted here -->
     </div>
 
     <div class="footer">
         <div class="footer-item" onclick="highlight(this)">
-            <a href="contactus.html">
-                <i class="fa-solid fa-phone"></i></a>
-           </div>
-          <div class="footer-item" onclick="highlight(this)">
-            <a href="notification.html"><i class="fa-solid fa-bell"></i></a>
+            <a href="contactus.html"><i class="fa-solid fa-phone"></i></a>
         </div>
         <div class="footer-item" onclick="highlight(this)">
+            <a href="notification.html"><i class="fa-solid fa-bell"></i></a>
+        </div>
+        <div class="footer-item active" onclick="highlight(this)">
             <a href="welcome.html"><i class="fa-solid fa-house"></i></a>
         </div>
         <div class="footer-item bus-icon" onclick="highlight(this)">
@@ -461,17 +409,145 @@ header img {
         <div class="footer-item" onclick="highlight(this)">
             <a href="tools.html"><i class="fa-solid fa-tools"></i></a>
         </div>
-        
     </div>
-    
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     <script>
+        const API_BASE_URL = 'https://iot-tracker-api.vercel.app';
+        const socket = io(API_BASE_URL);
+
+        // Function to get JWT token from localStorage
+        function getToken() {
+            return localStorage.getItem('token');
+        }
+
+        // Function to check if user is authenticated
+        function isAuthenticated() {
+            return !!getToken();
+        }
+
+        // Function to redirect to login if not authenticated
+        function checkAuth() {
+            if (!isAuthenticated()) {
+                window.location.href = 'studentlogin.html';
+                return false;
+            }
+            return true;
+        }
+
+        async function fetchAndRenderBuses() {
+            if (!checkAuth()) return;
+
+            try {
+                const token = getToken();
+                const response = await fetch(`${API_BASE_URL}/api/buses`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.status === 401) {
+                    // Token expired or invalid
+                    localStorage.removeItem('token');
+                    window.location.href = 'studentlogin.html';
+                    return;
+                }
+
+                const result = await response.json();
+
+                // Extract the buses array from the response
+                const buses = result.data?.buses || [];
+
+                const container = document.getElementById('busContainer');
+                container.innerHTML = '';
+
+                if (buses.length) {
+                    buses.forEach(bus => {
+                        const statusClass = `status-${bus.currentStatus || 'active'}`;
+                        const statusText = bus.currentStatus === 'active' ? 'Active' :
+                            bus.currentStatus === 'inactive' ? 'Inactive' : 'Maintenance';
+
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        card.innerHTML = `
+                            <div class="status-indicator ${statusClass}" title="${statusText}"></div>
+                            <div class="bus-number">BUS NO-${bus.busNumber}</div> 
+                            <div class="route">
+                                ${bus.route || 'Route not specified'}
+                            </div>
+                            <div class="icons">
+                                <a href="tel:${bus.driverId?.contact || '+917981321536'}">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="location.html?bus=${bus.busNumber}">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                } else {
+                    container.innerHTML = '<div class="card">No buses available</div>';
+                }
+
+                showUpdateNotification('Bus list updated');
+            } catch (error) {
+                console.error('Error fetching buses:', error);
+                const container = document.getElementById('busContainer');
+                container.innerHTML = '<div class="card">Error loading bus data</div>';
+            }
+        }
+
+        // Show update notification
+        function showUpdateNotification(message) {
+            const notification = document.getElementById('updateNotification');
+            const updateTime = document.getElementById('updateTime');
+
+            updateTime.textContent = message;
+            notification.style.display = 'block';
+
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Highlight active footer item
         function highlight(element) {
+            if (!checkAuth()) return;
+            
             document.querySelectorAll(".footer-item").forEach(item => {
                 item.classList.remove("active");
             });
             element.classList.add("active");
         }
-    </script>
 
+        // Listen for bus updates from server
+        socket.on('connect', () => {
+            const token = getToken();
+            if (token) {
+                socket.emit('authenticate', { token });
+            }
+        });
+
+        socket.on('busLocation', (data) => {
+            showUpdateNotification(`Bus ${data.busNumber} location updated`);
+        });
+
+        socket.on('unauthorized', () => {
+            localStorage.removeItem('token');
+            window.location.href = 'studentlogin.html';
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!checkAuth()) return;
+            
+            fetchAndRenderBuses();
+
+            // Refresh bus list every 60 seconds
+            setInterval(fetchAndRenderBuses, 60000);
+        });
+    </script>
 </body>
+
 </html>
